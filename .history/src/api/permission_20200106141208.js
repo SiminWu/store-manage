@@ -29,5 +29,5 @@ export function login(data) {
 }
 
 export function addInGood(data) {
-    return axios.post('/goods/putinstorage', data)
+    return axios.post('/user/login', data)
 }

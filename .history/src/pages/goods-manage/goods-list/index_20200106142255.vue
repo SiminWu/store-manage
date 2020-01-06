@@ -84,7 +84,7 @@
           </el-form-item>
           <el-form-item>
             <el-button type="primary"
-                       @click="handelsubmit">立即创建</el-button>
+                       @click="onSubmit">立即创建</el-button>
             <el-button>取消</el-button>
           </el-form-item>
         </el-form>
@@ -94,7 +94,6 @@
 </template>
 
 <script>
-import { addInGood } from '@/api/permission'
 export default {
     data() {
         return {
@@ -125,7 +124,7 @@ export default {
                 goodName: '原始橡胶',
                 size: '块状',
                 weightUnits: '公斤',
-                quantity: '1000',
+                quantity:'1000',
                 iDate: '2020-01-01',
                 iUnitPrice: '10000',
                 allPrice: '10000000',
@@ -143,17 +142,6 @@ export default {
         },
         onSubmit() {
             console.log('submit!')
-        },
-        async handelsubmit() {
-            try {
-                let data = await addInGood(this.form)
-                console.log("新增数据",data)
-                // let token = data.token
-                // this.$store.commit('LOGIN_IN', token)
-                // this.$router.replace('/')
-            } catch (e) {
-                console.log(e)
-            }
         }
     }
 }

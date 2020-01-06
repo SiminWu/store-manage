@@ -84,7 +84,7 @@
           </el-form-item>
           <el-form-item>
             <el-button type="primary"
-                       @click="handelsubmit">立即创建</el-button>
+                       @click="onSubmit">立即创建</el-button>
             <el-button>取消</el-button>
           </el-form-item>
         </el-form>
@@ -94,7 +94,6 @@
 </template>
 
 <script>
-import { addInGood } from '@/api/permission'
 export default {
     data() {
         return {

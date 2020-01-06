@@ -45,7 +45,7 @@
                          label="备注">
         </el-table-column>
       </el-table>
-      <el-dialog title="新增数据"
+      <el-dialog title="提示"
                  :visible.sync="dialogVisible"
                  width="60%"
                  :before-close="handleClose">
@@ -84,7 +84,7 @@
           </el-form-item>
           <el-form-item>
             <el-button type="primary"
-                       @click="handelsubmit">立即创建</el-button>
+                       @click="onSubmit">立即创建</el-button>
             <el-button>取消</el-button>
           </el-form-item>
         </el-form>
@@ -94,7 +94,6 @@
 </template>
 
 <script>
-import { addInGood } from '@/api/permission'
 export default {
     data() {
         return {
@@ -122,14 +121,14 @@ export default {
             ],
             dialogVisible: true,
             form: {
-                goodName: '原始橡胶',
-                size: '块状',
-                weightUnits: '公斤',
-                quantity: '1000',
-                iDate: '2020-01-01',
-                iUnitPrice: '10000',
-                allPrice: '10000000',
-                desc: '已经结清'
+                goodName: '',
+                size: '',
+                weightUnits: '',
+                quantity:'',
+                iDate: '',
+                iUnitPrice: '',
+                allPrice: '',
+                desc: ''
             }
         }
     },
@@ -143,17 +142,6 @@ export default {
         },
         onSubmit() {
             console.log('submit!')
-        },
-        async handelsubmit() {
-            try {
-                let data = await addInGood(this.form)
-                console.log("新增数据",data)
-                // let token = data.token
-                // this.$store.commit('LOGIN_IN', token)
-                // this.$router.replace('/')
-            } catch (e) {
-                console.log(e)
-            }
         }
     }
 }

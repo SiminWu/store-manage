@@ -28,6 +28,6 @@ export function login(data) {
     return axios.post('/user/login', data)
 }
 
-export function addInGood(data) {
-    return axios.post('/goods/putinstorage', data)
+export function addIngood(data) {
+    return axios.post('/user/login', data)
 }
